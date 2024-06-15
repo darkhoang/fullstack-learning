@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>My Homework</title>
+    <style>
+      body {
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .containt {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      .header-item,
+      .footer-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .img-info,
+      .img-avatar {
+        width: 25px;
+        height: 25px;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        gap: 30px;
+      }
+      .search {
+        position: relative;
+      }
+      .country {
+        border-bottom: 2px solid gray;
+        background-color: #e8eaed;
+        padding: 15px 30px;
+      }
+      input {
+        border: 1px solid #dfe1e5;
+        border-radius: 30px;
+        height: 48px;
+        width: 600px;
+        padding-left: 50px;
+        font-size: 20px;
+      }
+      .img-search {
+        width: 25px;
+        height: 25px;
+      }
+      .search-left {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+      .search-right {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+      }
+      .search-info {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+      }
+      .search-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .search-info button {
+        border: 1px solid #f8f9fa;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        color: #3c4043;
+        padding: 0 16px;
+        font-size: 14px;
+        height: 36px;
+      }
+
+      .search-info button:hover {
+        box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+        background-color: #f8f9fa;
+        border-color: #dadce0;
+        color: #202124;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #dadce0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containt">
+      <div class="header">
+        <div class="header-item">
+          <a>About</a>
+          <a>Store</a>
+        </div>
+        <div class="header-item">
+          <a>Gmail</a>
+          <a>Image</a>
+          <img
+            class="img-info"
+            src="https://www.svgrepo.com/show/532198/list-ul-alt.svg"
+          />
+          <img
+            class="img-avatar"
+            src="https://www.svgrepo.com/show/492689/avatar-boy.svg"
+          />
+        </div>
+      </div>
+      <div class="body">
+        <div class="logo">
+          <img
+            class="img-logo"
+            src="https://vudigital.co/wp-content/uploads/2021/10/y-nghia-va-lich-su-phat-trien-logo-google-tu-1995-va-su-nham-lan-noi-tieng-tao-nen-ten-thuong-hieu-google-4.webp"
+          />
+        </div>
+        <div class="Search">
+          <input type="text" />
+          <div class="search-left">
+            <img
+              class="img-search"
+              src="https://www.svgrepo.com/show/532554/search-alt.svg"
+            />
+          </div>
+          <div class="search-right">
+            <img
+              class="img-search"
+              src="https://www.svgrepo.com/show/528402/microphone.svg"
+            />
+            <img
+              class="img-search"
+              src="https://www.svgrepo.com/show/528090/camera-minimalistic.svg"
+            />
+          </div>
+        </div>
+        <div class="search-info">
+          <button>Google Search</button>
+          <button>I'm Felling Lucky</button>
+        </div>
+      </div>
+      <div class="country">Australia</div>
+      <div class="footer">
+        <div class="footer-item">
+          <a>Advertising</a>
+          <a>Business</a>
+          <a>How Search works</a>
+        </div>
+        <div class="footer-item">
+          <a>Privacy</a>
+          <a>Tems</a>
+          <a>Settings</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

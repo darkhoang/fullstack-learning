@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <title>Homework</title>
+    <style>
+      body {
+        font-size: 16px;
+        font-family: 'Times New Roman';
+        margin: 0;
+      }
+      .containt {
+        height: 100vh;
+        display: flex;
+      }
+      .containt-left {
+        background-color: rgb(207, 160, 71);
+        display: flex;
+        flex-direction: column;
+      }
+      .header-containt-left {
+        height: 50%;
+        padding-top: 200px;
+        text-align: center;
+      }
+      
+      .logo-left{
+        width: 100px;
+        height: 70px;
+        padding-bottom: 30px;
+      }
+      p{
+        font-size: 30px;
+        color: #986923;
+      }
+      .containt-right {
+        display: flex;
+        position: relative;
+        background-color: white;
+        flex: 1;
+        position: relative;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+      }
+    
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      input{
+        background-color: #f3f6f9;
+        border: none;
+        width: 100%;
+        height: 40px;
+        padding-left: 10px;
+      }
+      .label{
+        display: block;
+        margin-bottom: 10px;
+      }
+      
+      input:focus {
+        background-color: #ebedf3;
+        outline: none;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      .forgot-password{
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo img{
+        height: 20px;
+      }
+      .button{
+        display: flex;
+        gap: 10px;
+      }
+      .footer-contain-right{
+        position: absolute;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containt">
+      <div class="containt-left">
+        <div class="header-containt-left">
+          <img
+            class="logo-left"
+            src="https://preview.keenthemes.com/metronic/react/demo3/media/logos/logo-letter-1.png"
+          />
+          <p>Discover Amazing Metronic</br>
+          with great build tools</p>
+        </div>
+        <div>
+          <img
+            class="img-containt-left"
+            src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/illustrations/login-visual-1.svg"
+          />
+        </div>
+      </div>
+      <div class="containt-right">
+        <div>
+          <h2>Welcome to Metronic</h2>
+          <div><span>New Here?</span> <a> Create an Account</a></div>
+        </div>
+        <form>
+          <div>
+            <label>
+             <span class="label">Email </span> 
+              <input  type="text" />
+            </label>
+          </div>
+          <div class="input-wrapper">
+            <label>
+              <span class="label">Password</span> 
+              
+              <input class="label" type="password" />
+            </label>
+            <a class="forgot-password" href="#"> Forgot Password</a>
+          </div>
+          <div class="button">
+            <button>Sign In</button>
+            <button class="logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png" 
+              />
+              Sign in with Google</button>
+          </div>
+          </form>
+          <div class="footer-contain-right">
+            <span>2024©</span>  
+            <a href="">Keenthemes</a> 
+            <a href="">Terms</a> 
+            <a href="">Plans</a>
+            <a href="">Contact Us</a>
+          </div>
+
+        
+    </div>
+  </body>
+</html>

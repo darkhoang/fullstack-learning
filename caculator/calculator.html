@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      body {
+        margin: 100px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div>
+        <div class="input-equation"></div>
+        <input class="calculator-input" readonly />
+      </div>
+      <div>
+        <div>
+          <button class="calculator-btn">)</button>
+          <button class="calculator-btn">(</button>
+          <button class="calculator-btn">DEL</button>
+          <button class="calculator-btn">AC</button>
+        </div>
+        <div>
+          <button class="calculator-btn">7</button>
+          <button class="calculator-btn">8</button>
+          <button class="calculator-btn">9</button>
+          <button class="calculator-btn">/</button>
+        </div>
+        <div>
+          <button class="calculator-btn">4</button>
+          <button class="calculator-btn">5</button>
+          <button class="calculator-btn">6</button>
+          <button class="calculator-btn">*</button>
+        </div>
+        <div>
+          <button class="calculator-btn">1</button>
+          <button class="calculator-btn">2</button>
+          <button class="calculator-btn">3</button>
+          <button class="calculator-btn">-</button>
+        </div>
+        <div class="row">
+          <button class="calculator-btn">0</button>
+          <button class="calculator-btn">.</button>
+          <button class="calculator-btn">=</button>
+          <button class="calculator-btn">+</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let input = document.querySelector('.calculator-input');
+    let buttons = document.querySelectorAll('.calculator-btn');
+    let inputEquation = document.querySelector('.input-equation');
+    let clearInput = function () {
+      input.value = '';
+    };
+    let deleteLastInput = function () {
+      input.value = input.value.slice(0, -1);
+    };
+    let calculateResult = function () {
+      // Khi nhan = , minh phai tinh gia tri cua input
+      // 1. truoc khi tinh gia tri, minh phai biet phuong trinh minh can tinh la gi?
+      // 2. phuong trinh minh can tinh la tu input? Minh biet cach lay gia tri (value) tu input hay khong?
+      // 3 sau khi co phuong trinh tu input.value, minh se save no vao variable
+      // 4. Lam sao de tinh gia tri tu phuong trinh variable tren ---> dung eval
+      // 5. Neu phuong trinh khong hop thuc thi eval se ra sao? ---> Minh dung try / catch, khi catch xay ra nghia la phuong trinh khong hop le
+      //  5.1 Neu khong hop le thi se de ket qua la ERROR
+      // 5. 2 Neu hop le (catch ko xay ra) thi minh se co gia tri ket qua tu eval set vao result
+      // 6. Sau khi co ket qua, minh se in ket qua vao dau? In ket qua nguoc lai vao input. Minh biet cach set gia tri (value) vao input khong?
+
+      let inputValue = input.value;
+      let result = '';
+      try {
+        result = eval(inputValue);
+      } catch (e) {
+        result = 'ERROR';
+      }
+      if (result === 'ERROR') {
+        inputEquation.innerHTML = '';
+      } else {
+        inputEquation.innerHTML = inputValue;
+      }
+      input.value = result;
+    };
+    let onCalculatorButtonClick = function (event) {
+      let action = event.currentTarget.textContent;
+      if (action === 'AC') {
+        clearInput();
+      } else if (action === 'DEL') {
+        deleteLastInput();
+      } else if (action === '=') {
+        calculateResult();
+      } else {
+        let inputValue = input.value;
+        let newValue = inputValue + action;
+        input.value = newValue;
+      }
+    };
+
+    for (let i = 0; i < buttons.length; i++) {
+      let currentButton = buttons[i];
+      currentButton.addEventListener('click', onCalculatorButtonClick);
+    }
+  </script>
+</html>

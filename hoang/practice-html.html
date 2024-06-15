@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>Practice HTML</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        margin: 0;
+      }
+      .containt {
+        display: flex;
+        height: 100vh;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        min-width: 400px;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .right {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: #b1dced;
+
+        text-align: center;
+      }
+      .top-left {
+        display: flex;
+        margin-top: 50px;
+      }
+      .img-left {
+        height: 50px;
+        width: 50px;
+        padding-bottom: 10px;
+      }
+      .brandname {
+        color: rgb(80, 230, 218);
+        font-weight: bold;
+      }
+      .signin {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+      }
+      .contain-left {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+      }
+      .letter {
+        color: gray;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .link {
+        text-decoration: none;
+        color: rgb(24, 57, 206);
+      }
+      input {
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 5px;
+        border: 1px solid #a7a7a7;
+      }
+      label {
+        font-weight: bold;
+      }
+      .Pass {
+        position: relative;
+      }
+      .forgot-pass {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .btn-signin {
+        text-align: center;
+        border-radius: 4px;
+        background-color: black;
+        color: white;
+        padding: 10px 20px 10px 20px;
+      }
+      .bottom {
+        display: flex;
+        justify-content: center;
+      }
+      .bottom-left {
+        display: flex;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .google {
+        position: absolute;
+        top: 8px;
+        left: 55px;
+      }
+      .logo-google {
+        width: 25px;
+        height: 25px;
+      }
+      .btn-google {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 4px;
+        background-color: rgb(177 220 237);
+        color: #000;
+        padding: 10px 40px 10px 40px;
+        border: 1px solid #a7a7a7;
+      }
+
+      .top-right {
+      }
+      .img-right {
+        max-height: 400px;
+      }
+      .contain-top-right {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containt">
+      <!-- containt top left -->
+      <div class="left">
+        <div class="top-left">
+          <img
+            class="img-left"
+            src="https://oakter.mscorpres.co.in/assets/images/mscorpres_auto_logo.png"
+          />
+          <div class="brandname">METRONIC</div>
+        </div>
+        <!-- contain left -->
+        <div class="contain-left">
+          <div class="signin">Sign In</div>
+          <div class="letter">
+            Or
+            <a class="link" href="">Create an account</a>
+          </div>
+          <form>
+            <label>
+              Email
+              <input class="input-name" type="text" name="Email" />
+            </label>
+            <label>
+              <div class="Pass">
+                Password
+                <input class="input Password" type="password" name="Password" />
+                <div class="forgot-pass">
+                  <a class="link" href="">Forgot Password? </a>
+                </div>
+              </div>
+            </label>
+          </form>
+          <div class="bottom">
+            <button class="btn-signin">Sign In</button>
+          </div>
+        </div>
+        <!-- containt bottom left -->
+
+        <div class="bottom-left">
+          <button class="btn-google">
+            <img
+              class="logo-google"
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+            />
+
+            Sign in with Google
+          </button>
+        </div>
+      </div>
+      <!-- containt right -->
+      <div class="right">
+        <div class="top-right">
+          <h1>Amazing Wireframes</h1>
+          <div class="contain-top-right">
+            <p>
+              User Experience & Interface Design, Product Strategy<br />
+              Web Application SaaS Solutions
+            </p>
+          </div>
+        </div>
+        <img
+          class="img-right"
+          src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/illustrations/login-visual-2.svg"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Homework week 2</title>
+    <style>
+      h1 {
+        font-size: 40px;
+        color: green;
+      }
+      div {
+        margin-bottom: 20px;
+      }
+      span {
+        font-weight: bold;
+      }
+      .second {
+        color: red;
+      }
+      .third {
+        color: forestgreen;
+      }
+      .forth {
+        color: pink;
+      }
+      .color-fifth {
+        color: blue;
+      }
+      .color-third {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is Week 2 - Homework 1</h1>
+    <div><span class="fist">1st</span> text block!</div>
+    <div class="color second"><span class="second">2nd</span> text block!</div>
+    <div class="color-third"><span class="third">3rd</span> text block!</div>
+    <div class="color-forth"><span class="forth">4th</span> text block!</div>
+    <div class="color-fifth"><span class="fifth">5th</span> text block!</div>
+    <script>
+      const red = document.querySelector('.second');
+      red.addEventListener('click', function () {
+        alert('Red text is clicked');
+      });
+      const green = document.querySelector('.third');
+      green.addEventListener('click', function () {
+        alert('Green text is clicked');
+      });
+      const orange = document.querySelector('.forth');
+      orange.addEventListener('click', function () {
+        alert('Orange text is clicked');
+      });
+      const blue = document.querySelector('.fifth');
+      blue.addEventListener('click', function () {
+        alert('Blue text is clicked');
+      });
+    </script>
+  </body>
+</html>
