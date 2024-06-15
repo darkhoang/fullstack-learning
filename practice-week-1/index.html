@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <title>Homework Week 2</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+
+      .info {
+        width: 500px;
+        background-color: orange;
+      }
+
+      .login {
+        background-color: white;
+        flex: 1;
+      }
+      .login {
+        position: relative;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .special-text {
+        color: #91263b;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 10px;
+      }
+
+      input {
+        background-color: #f3f6f9;
+        border: none;
+        width: 100%;
+        height: 40px;
+        padding-left: 10px;
+      }
+
+      input:focus {
+        background-color: #ebedf3;
+        outline: none;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      .forgot-password {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .social-signin-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .social-signin-button img {
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="info">Info</div>
+      <div class="login">
+        <div>
+          <h2>Welcome to <span class="special-text">Metronic</span></h2>
+          <div>New Here? Create an Account</div>
+        </div>
+
+        <form>
+          <div>
+            <label>
+              <span class="label">Email</span>
+              <input type="email" />
+            </label>
+          </div>
+          <div class="input-wrapper">
+            <label>
+              <span class="label">Password</span>
+              <input type="password" />
+            </label>
+
+            <a class="forgot-password" href="#">Forgot Password</a>
+          </div>
+          <div class="buttons">
+            <button>Sign in</button>
+            <button class="social-signin-button">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
+              />
+              Sign in with Google
+            </button>
+          </div>
+        </form>
+
+        <div class="footer">
+          <a>Terms</a>
+          <a>Plans</a>
+          <a>Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Task 1</title>
+  </head>
+  <body>
+    <script>
+      function tellMeMore(testPerson) {
+        console.log(`My name is ${testPerson.name}`);
+        console.log(`I am ${testPerson.age}`);
+
+        if (testPerson.age < 18) {
+          console.log('I am unemployed');
+        } else if (testPerson.age > 18 && testPerson.age < 65) {
+          console.log('I am employed');
+        } else {
+          console.log('I am retired');
+        }
+      }
+
+      let testPerson = {
+        name: 'Jack Vo',
+        age: 40,
+      };
+
+      tellMeMore(testPerson);
+    </script>
+  </body>
+  >
+</html>

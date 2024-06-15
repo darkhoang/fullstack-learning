@@ -1,0 +1,132 @@
+<html lang="en">
+  <head>
+    <title>Practice week</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/5.1.2/jasmine.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/5.1.2/jasmine.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/5.1.2/jasmine-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/5.1.2/boot0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/5.1.2/boot1.min.js"></script>
+  </head>
+  <body>
+    <script></script>
+    <script src="./index.spec.js"></script>
+    <script>
+      function add(x, y) {
+        return x + y;
+      }
+
+      function minus(x, y) {
+        return x - y;
+      }
+
+      function checkscore(score) {
+        if (score >= 50) {
+          return 'Pass';
+        } else {
+          return 'Fail';
+        }
+      }
+
+      function divide(x, y) {
+        return x / y;
+      }
+
+      function getAverage(x, y) {
+        return (x + y) / 2;
+      }
+
+      function getGrade(score) {
+        if (score >= 90) {
+          return 'A';
+        } else if (score >= 80 && score <= 90) {
+          return 'B';
+        } else if (score >= 70 && score <= 80) {
+          return 'C';
+        } else if (score >= 60 && score <= 70) {
+          return 'D';
+        } else if (score >= 50 && score <= 60) {
+          return 'E';
+        } else {
+          return 'F';
+        }
+      }
+
+      function getNumbersLargerThanTen(number) {
+        let result = [];
+        for (let i = 0; i < number.length; i++) {
+          let currentNumber = number[i];
+          if (currentNumber > 10) {
+            result.push(currentNumber);
+          }
+        }
+        return result;
+      }
+
+      function sum(number) {
+        let total = 0;
+        for (let i = 0; i < number.length; i++) {
+          let currentNumber = number[i];
+          total = total + currentNumber;
+        }
+        return total;
+      }
+
+      function getArrayAverage(number) {
+        let total = sum(number);
+        let result = total / number.length;
+        return result;
+      }
+
+      // [1, 2, 1, 'a', 4]
+      function uniqueItems(array) {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+          let curentItem = array[i];
+          // 0 ---> 1
+          // 1 ---> 2
+          // 2 ---> 1
+          // 3 ---> 'a'
+          // 4 ---> 4
+
+          // pick number 1 ---> put in the box "result"
+          // pick 2nd number 2 ----> put in the box "result" - Why we know 2 is not a duplicated number? The guy need to look into the "result" box to check
+          // if 2 is inside the "result" box
+
+          // Condition: if the currentItem does not exist inside "result" --> put it in "result"
+          let isCurrentItemInResult = result.includes(curentItem);
+
+          if (isCurrentItemInResult === false) {
+            result.push(curentItem);
+          }
+        }
+
+        return result;
+      }
+
+      function reverse(array) {
+        let result = [];
+        for (let i = array.length - 1; i >= 0; i--) {
+          let curentItem = array[i];
+          result.push(curentItem);
+
+          //0 --> 1
+          //1 --> 1
+        }
+        return result;
+      }
+
+      function reverseSetence(sentence) {
+        let result = ''; // empty string
+        for (let i = sentence.length - 1; i >= 0; i--) {
+          let currentletter = sentence[i];
+
+          result = result + currentletter;
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

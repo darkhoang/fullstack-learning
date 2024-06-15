@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <title>Week 7</title>
+    <link rel="stylesheet" href="calculator.css" />
+
+    <style>
+      body {
+        margin: 100px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="input-wrapper">
+        <div class="input-equation"></div>
+        <input class="calculator-input" readonly="" />
+      </div>
+      <div class="calculator-buttons">
+        <div class="row">
+          <button class="calculator-btn">(</button>
+          <button class="calculator-btn">)</button>
+          <button class="calculator-btn calculator-del-btn">DEL</button>
+          <button class="calculator-btn">AC</button>
+        </div>
+        <div class="row">
+          <button class="calculator-btn">7</button>
+          <button class="calculator-btn">8</button>
+          <button class="calculator-btn">9</button>
+          <button class="calculator-btn">/</button>
+        </div>
+        <div class="row">
+          <button class="calculator-btn">4</button>
+          <button class="calculator-btn">5</button>
+          <button class="calculator-btn">6</button>
+          <button class="calculator-btn">*</button>
+        </div>
+        <div class="row">
+          <button class="calculator-btn">1</button>
+          <button class="calculator-btn">2</button>
+          <button class="calculator-btn">3</button>
+          <button class="calculator-btn">-</button>
+        </div>
+        <div class="row">
+          <button class="calculator-btn">0</button>
+          <button class="calculator-btn">.</button>
+          <button class="calculator-btn calculator-result-btn">=</button>
+          <button class="calculator-btn">+</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let inputEquation = document.querySelector('.input-equation');
+      let input = document.querySelector('.calculator-input');
+      let buttons = document.querySelectorAll('.calculator-btn');
+      let calculateResult = function () {
+        let inputValue = input.value;
+        let result = '';
+
+        try {
+          result = eval(inputValue);
+        } catch (e) {
+          result = 'ERROR';
+        }
+
+        if (result === 'ERROR') {
+          inputEquation.innerHTML = '';
+        } else {
+          inputEquation.innerHTML = inputValue;
+        }
+
+        input.value = result;
+      };
+      let clearInput = function () {
+        input.value = '';
+      };
+      let deleteLastInput = function () {
+        input.value = input.value.slice(0, -1);
+      };
+      let onCalculatorButtonClick = function (event) {
+        let action = event.currentTarget.textContent;
+        processCalculatorWithAction(action);
+      };
+      let isLastCharacterAnOperator = function (inputValue) {
+        let operators = ['+', '-', '*', '/', '.'];
+        let lastCharacter = inputValue[inputValue.length - 1];
+
+        return operators.includes(lastCharacter);
+      };
+
+      let processCalculatorWithAction = function (action) {
+        if (action === '=') {
+          calculateResult();
+        } else if (action === 'AC') {
+          clearInput();
+        } else if (action === 'DEL') {
+          deleteLastInput();
+        } else {
+          let inputValue = input.value;
+          let newValue = inputValue + action;
+
+          input.value = newValue;
+        }
+        let isValidInput = isLastCharacterAnOperator(input.value);
+
+        console.log(isValidInput);
+      };
+      let onBodyKeyUp = function (event) {
+        let key = event.key;
+        let action;
+        if (key === 'Enter') {
+          action = '=';
+        } else if (key === 'Escape') {
+          action = 'AC';
+        } else if (key === 'Backsspace') {
+          action = 'DEL';
+        }
+
+        let acceptedKeys = [];
+        for (let i = 0; i < buttons.length; i++) {
+          let currentButton = buttons[i];
+          let buttonText = currentButton.textContent;
+          acceptedKeys.push(buttonText);
+        }
+        if (acceptedKeys.includes(key)) {
+          processCalculatorWithAction(key);
+        }
+      };
+
+      for (let i = 0; i < buttons.length; i++) {
+        let currentButton = buttons[i];
+
+        currentButton.addEventListener('click', onCalculatorButtonClick);
+      }
+    </script>
+  </body>
+</html>
